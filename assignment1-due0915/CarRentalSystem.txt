@@ -1,0 +1,103 @@
+Design a car Rental System
+
+User can
+1. Login App
+2. Make a reservation
+3. Review order
+4. Cancel
+
+————————————————————————————————————————————————————————
+Class:
+User
+
+Data:
+name, userLocation, phone, destination, numberOfCar, time, order
+
+loginApp(){
+	App.login(name);
+}
+
+reserver(){
+	if(Vendor.stock <= 0)
+		System. out. print(“Sorry, there is no enough in stock”);
+	else{
+		this.order = App.match(this.data);
+	}
+}
+
+review(){
+	System. out. print(this.order.name + this.order.phone);
+}
+
+cancel(){
+	App.orderEnd();
+}
+
+————————————————————————————————————————————————————————
+Class:
+Vendor
+
+Data:
+stock, order, timeOnUser, cancelTime
+
+Behavior:
+confirmOrder(orderNumberOfCar){
+	if(stock < orderNumberOfCar)
+		return false;
+	else{
+		stock -= orderNumberOfCar;
+		return true;
+	}
+
+}
+
+produceBill(UserData){
+	if(confirm){
+		List<T> billInfo;
+
+		billInfo.add(UserData);
+		billInfo.add(orderNumberOfCar * timeOnUser / rentalBase);		
+		Vendor.order = info;
+	}
+}
+
+billDone(){
+	App.orderEnd
+}
+
+————————————————————————————————————————————————————————
+Class:
+App
+
+Data:
+status
+
+Behavior:
+login(username){
+	List<String> nameList;
+	
+	for(String name : nameList)
+		if(userName == name)
+			status = true;
+		else
+			status = false;
+}
+
+match(userData){
+	List<T> info;
+	info.add(userData);
+	info.add(rentalData);
+	User.order = info;
+}
+
+orderEnd(){
+	if(System.time - User.order.time > Vendor.cancelTime){
+		alert(User);
+		User.order = null;
+		Vendor = null;
+	}
+
+	alert(User);
+	User.order = null;
+	Vendor = null;
+}

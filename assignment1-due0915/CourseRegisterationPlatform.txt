@@ -1,0 +1,98 @@
+Design a Course Registration Platform
+
+Student can
+1. Login platform
+2. Review available courses
+3. Registration
+4. Withdraw
+
+————————————————————————————————————————————————————————
+Class:
+Student
+
+Data:
+name, semester, program, courseList
+
+Behavior:
+login(){
+	Platform.login(name);
+}
+
+review(){
+	List<Course> availableCourseList;
+	availableCourseList = Platform.display(semester, program);
+	return availableCourseList;
+}
+
+register(courseName){
+	Course course = availableCourseList.get(courseName);
+		course.addStudent(this.Data);
+		courseList.add(course.name);
+	}
+}
+
+withdraw(courseName){
+	if(courseList.contains(courseName)){
+		for(Course course : courseList){
+			if(curseName == course.name){
+				courseList.remove(courseName);
+			}
+		}
+	}
+}
+————————————————————————————————————————————————————————
+Class:
+Platform
+
+Data:
+status
+
+Behavior:
+login(studentName){
+	List<String> students;
+
+	for(String student : students){
+		if(student == studentName)
+			return true;
+		else
+			return false;
+	}
+}
+
+match(studentData){
+	for(Course course : studentData.courseList){
+		course.listOfStudentName.add(studentData.name);
+	}	
+}
+
+logout(){
+	logout();
+}
+————————————————————————————————————————————————————————
+Class:
+Course
+
+Data
+name, crnNumber, numberOfStudent, waitingList, listOfStudentName, meetingTime
+
+Behavior:
+addStudent(studentData){
+	if(listOfStudentName.contains(studentData.name))
+		System. out. print(“You have already registered ” + name);
+	else{
+			if(waitingList == null){
+				listOfStudentName. add(studentData .name);
+			}
+			else if(waitingList >= 0){
+				course.waitingList.add(name);
+			}
+	}
+}
+
+removeStudent(studentData){
+	if(!listOfStudentName.contains(studentData.name))
+		System. out. print(“You have not registered ” + name);
+	else{
+		listOfStudentName. remove(studentData .name);
+	}
+}

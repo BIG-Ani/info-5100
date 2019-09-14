@@ -1,0 +1,89 @@
+Design a Parking lot
+
+User can
+1. Look up parking space and parking fee
+2. park
+3. Pay for bill
+
+——————————————————————————————————————————————————————
+Class:
+User
+
+Data:
+name, phone, order, currentTime
+
+lookUpSpace(){
+	if(Parkinglot.totalSpace - Parkinglot.numberOfOnUse <= 0){
+		return false;
+	}else{
+		List<T> info;
+
+		info.add(this.name);
+		info.add(this.phone);
+		info.add(currentTime);
+		return true;
+	}
+}
+
+park(){
+	if(CreditCard.isAvailable())
+		Parkinglot.produceBill(User.Data);
+	else
+		cancel();
+}
+
+makePayment(){
+	if(CreditCard.isAvailable()){
+		CreditCard.amount -= Parkinglot.bill;
+	}else{
+		System.out.print(“Sorry, this credit card is in valid”);
+	}
+}
+
+cancel(){
+	User.order = null;
+}
+
+
+——————————————————————————————————————————————————————
+Class:
+Parkinglot
+
+Data:
+price, totalSpace, numberOfOnUse, bill, outTime
+
+Behavior:
+produceBill(){
+	List<T> billInfo;
+
+	billInfo.add(User.Data);
+	billInfo.add(outTime);
+	billInfo.add(this.price * (outTime - User.outTime));
+
+	this.bill = billInfo;
+}
+
+——————————————————————————————————————————————————————
+Class:
+CrediCard
+
+Data:
+type, bankName, cardNumber, expireData, securityCode, amount
+
+Behavior:
+isAvailable(){
+	Date currentDate = new Date();
+	return currentDate.compareTo(expireDate);
+}
+
+amountVerify(){
+	amount -= Parkinglot.bill.amount;
+}
+
+
+
+
+
+
+
+

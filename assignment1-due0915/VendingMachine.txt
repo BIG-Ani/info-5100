@@ -1,0 +1,63 @@
+Design a vending Machine (will accept coins of different denominations and vends out candies, soda etc)
+
+Consumer can
+
+1. Select goods and pay
+2. Cancel operation
+
+————————————————————————————————————————————————————
+Class:
+Consumer
+
+Data:
+money, cartList, bill, order
+
+Behavior:
+selectAndPay(List<Commodity> commoditylList){
+	List<T> info;
+	info.add(cartList);
+	
+	for(Commodity commodity : commodityList){
+		bill += commodity.price;
+	}
+	info.add(bill);
+
+	if(money >= bill)
+		return true;
+	else{
+		cancel();
+
+		return false;
+	}
+
+	Consumer.order = info;
+}
+
+cancel(){
+	alert(Consumer);
+	Consumer.order = null;
+}
+
+————————————————————————————————————————————————————
+Class:
+Commodity
+
+Data:
+name, price, stock
+
+————————————————————————————————————————————————————
+Class:
+VendingMachine
+
+Data:
+orderBill
+
+Behavior:
+takeMoney(HashMap<Commodity, Integer> sellOutList){
+	for(Map.Entry commodity : sellOutList.entrySet()){
+		if(Consumer.order.cartList.contains(commodity) && commodity.stock >= cartList)
+			commodity.stock -= Consumer.order.carList;
+
+		orderBill += sellOutList.get(commodity) * commodity.price;
+	}
+}

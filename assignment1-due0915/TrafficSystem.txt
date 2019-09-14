@@ -1,0 +1,74 @@
+Design a traffic system for a conjunction
+
+Control System can
+1. Examine the traffic condition
+2. Reduce  time portion of red light
+
+————————————————————————————————————————————————————————————————
+Class: 
+ControlSystem
+
+Data: 
+south2NorthDirection
+west2EastDirection
+modifyBase, modifyPara
+conjunctionLine,
+south2NorthRoad,  west2EastRoad, 
+south2NorthTrafficLight, west2EastTrafficLight, 
+numberOfSouth2NorthVehicle, numberOfWest2EastVehicle;
+
+Behavior: 
+monitorCondition(){
+	numberOfSouth2NorthVehicle = south2NorthRoad.count(south2NorthDirection);	
+	numberOfWest2EastVehicle = west2EastRoad().count(west2EastDirection);
+}
+
+modify(){
+	if(numberOfSouth2NorthVehicle > conjunctionLine && numberOfWest2EastVehicle > conjunctionLine){
+		if(numberOfSouth2NorthVehicle > numberOfWest2EastVehicle){
+			south2NorthTrafficLight.reduce(modifyDegree * modifyEnum);
+			west2EastTrafficLight.reduce(modifyEnum);
+		}else{
+			south2NorthTrafficLight.reduce(modifyEnum);
+			west2EastTrafficLight.reduce(modifyDegree  * modifyEnum);
+		}
+	}else if(numberOfSouth2NorthVehicle > conjunctionLine){
+		south2NorthTrafficLight.reduce(modifyEnum);
+	}else if(numberOfWest2EastVehicle > conjunctionLine){
+		west2EastTrafficLight.reduce(modifyEnum);
+	}
+}
+
+————————————————————————————————————————————————————————————————
+Class:
+Road
+
+Data:
+name, numberOfWaittiingVehicle, numberOfLane, trafficLight
+
+Behavior:
+count(direction){
+	System.out.print(direction + “stream volume is”);
+	
+	if(trafficLight.color == red)
+		return numberOfWaittiingVehicle;
+}
+
+————————————————————————————————————————————————————————————————
+Class:
+TrafficLight
+
+Data:
+color, redPortion, direction, reducedStep
+
+Behavior:
+reduce(paraConstant){
+	if(this.direction == direction){
+		redPortion = reducedStep * paraConstant;
+	}
+}
+reduce(direction, paraConstant){
+	if(this.direction == direction){
+		redPortion = reducedStep * paraConstant;
+	}
+}

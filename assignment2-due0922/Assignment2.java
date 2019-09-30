@@ -118,7 +118,7 @@ public class Assignment2 {
         for(char ch : name){
             if(Character.isDigit(ch))
                 System.out.println(true);
-                break;
+                break;  //It should be return instead of break
         }
 
         System.out.println(false);

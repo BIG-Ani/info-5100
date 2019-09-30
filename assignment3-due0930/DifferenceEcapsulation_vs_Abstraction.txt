@@ -1,0 +1,11 @@
+Encapsulation:
+It is a technology which is Object-Oriented Programming. Creating a class, we set
+up relative statuses and behaviors. As the impact of encapsulation, the outside can
+only access the variables and methods with public visiting methods, as well as
+not knowing how the detail implementation. Importantly, the style of programming 
+form this influence - encapsulation.
+
+Abstraction:
+This is to say that abstraction is a set of conceptions, like behaviors related to an
+object, not exactly exist. Especially, it is an imagination, or process to identify specific
+class.

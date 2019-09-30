@@ -1,0 +1,34 @@
+Basically, encapsulation means that from class level, we can hide implementation detail under 
+the field of Object. So, as a user, he or she can still call method, or even get private field
+variables through public get functions, without knowing how the method code is.
+
+For example:
+Here we can create a class named Course. To get a reference of this class and call relative
+variables or method, users may not know exactly the implementation details, such as the 
+logical judgement of the setNumStudent. All of these are hidden in class from users.
+
+class Course{
+
+	private int numStudents;
+	private String professorName;
+
+	public void setNumStudent(int sumStudents){
+		if(sumStudents <= 0)
+			throw new IllegalArgumentException("The number of students must be positive!");
+		
+		this. sumStudents = sumStudents;
+	}
+
+	public void setProfessorName(String professorName){
+		
+		this. professorName = professorName;
+	}
+
+	public int getNumStudents(){
+		return numStudents;
+	}
+
+	public String getProfessorName(){
+		return professorName;
+	}
+}

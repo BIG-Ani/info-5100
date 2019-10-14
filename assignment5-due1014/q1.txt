@@ -1,0 +1,8 @@
+Assignment5
+
+Explain the difference between final and finally
+
+Answer:
+final is a key word for data(include class and classes' field variables). Class with final can not be extended; variable with final can not be changed.
+
+finally is a key word for exception processing syntax(try... catch... finally). Usually used to process free resources after catching the exceptions.

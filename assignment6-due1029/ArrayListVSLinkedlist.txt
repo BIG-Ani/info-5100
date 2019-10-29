@@ -1,0 +1,9 @@
+Write two differences between ArrayList and LinkedList
+
+1. Data structure
+ArrayList is implemented based on array, which has index and linear storage architecture
+LinkedList is implemented with class Node, which contains a data and pointers
+
+2. Visiting time
+ArrayList can support randomly visiting, because of it index attribute. This will only take O(1)
+For LinkedList, what has to do is to traverse from end to match the data and target, which may take O(n)

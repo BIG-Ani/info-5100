@@ -1,0 +1,8 @@
+1|100|zhou|male
+2|101|lei|male
+3|102|chen|male
+4|103|sun|female
+5|5|zhang|male
+6|106|kun|male
+7|107|ming|male
+8|108|siva|male
